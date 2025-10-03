@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="E-comm.css">
+    <title>E-commerce Product Showcase</title>
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+      <nav class="navbar">
+  <div class="nav-container">
+    <div class="nav-logo">
+      <!-- Simple symbol as logo -->
+      <span class="logo-symbol">🛍️</span>
+      <span>ShopKart</span>
+    </div>
+    <ul class="nav-menu">
+      <li><a href="#home" class="nav-link">Home</a></li>
+      <li><a href="#products" class="nav-link">Products</a></li>
+      <li><a href="#reviews" class="nav-link">Reviews</a></li>
+      <li>
+        <button class="cart-button" id="cartButton">
+          <span class="cart-icon">🛒</span>
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+    <!-- Home Section -->
+    <section id="home" class="section home-section">
+      <div class="container">
+        <div class="home-content">
+          <h1 class="home-title">Welcome to Shopkart</h1>
+          <p class="home-subtitle">Discover amazing products at unbeatable prices. Quality meets affordability in our curated collection.</p>
+          <a href="#products" class="cta-button">Shop Now</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="section products-section">
+      <div class="container">
+        <h2 class="section-title">Our Products</h2>
+
+        <!-- Search and Filters -->
+        <div class="controls-section">
+          <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Search products by name or keyword..." class="search-input">
+            <div class="search-icon">🔍</div>
+          </div>
+
+          <div class="price-filter">
+            <label for="priceRange">Price Range: $<span id="priceValue">0 - 500</span></label>
+            <div class="range-container">
+              <input type="range" id="minPrice" min="0" max="500" value="0" class="price-slider">
+              <input type="range" id="maxPrice" min="0" max="500" value="500" class="price-slider">
+            </div>
+          </div>
+        </div>
+
+        <!-- Category Filter -->
+        <div class="category-filter">
+          <button class="category-btn active" data-category="all">All Products</button>
+          <button class="category-btn" data-category="Electronics">Electronics</button>
+          <button class="category-btn" data-category="Clothing">Clothing</button>
+          <button class="category-btn" data-category="Home & Kitchen">Home & Kitchen</button>
+          <button class="category-btn" data-category="Accessories">Accessories</button>
+        </div>
+
+        <div class="products-grid" id="productsGrid">
+          <!-- Products will be dynamically inserted here -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Reviews Section -->
+    <footer id="reviews" class="footer-section">
+      <div class="container">
+        <h2 class="section-title">Customer Reviews</h2>
+
+        <!-- Review Form -->
+        <div class="review-form-container">
+          <h3>Share Your Experience</h3>
+          <form id="reviewForm" class="review-form">
+            <div class="form-group">
+              <label for="reviewerName">Your Name</label>
+              <input type="text" id="reviewerName" placeholder="Enter your name" required>
+            </div>
+
+            <div class="form-group">
+              <label>Rating</label>
+              <div class="star-rating" id="starRating">
+                <span class="star" data-rating="1">★</span>
+                <span class="star" data-rating="2">★</span>
+                <span class="star" data-rating="3">★</span>
+                <span class="star" data-rating="4">★</span>
+                <span class="star" data-rating="5">★</span>
+              </div>
+              <input type="hidden" id="ratingValue" value="0" required>
+            </div>
+
+            <div class="form-group">
+              <label for="reviewText">Your Review</label>
+              <textarea id="reviewText" rows="4" placeholder="Tell us about your experience..." required></textarea>
+            </div>
+
+            <button type="submit" class="submit-button">Submit Review</button>
+          </form>
+        </div>
+
+        <!-- Reviews Display -->
+        <div class="reviews-list" id="reviewsList">
+          <!-- Reviews will be dynamically inserted here -->
+        </div>
+
+        <!-- Footer Copyright -->
+        <div class="footer-bottom">
+          <p>&copy; 2025 ShopHub. All rights reserved.</p>
+        </div>
+      </div>
+    </section>
+
+
+    
+    <!-- Shopping Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+      <div class="cart-header">
+        <h3>Shopping Cart</h3>
+        <button class="close-cart" id="closeCart">&times;</button>
+      </div>
+      <div class="cart-items" id="cartItems">
+        <p class="empty-cart">Your cart is empty</p>
+      </div>
+      <div class="cart-footer">
+        <div class="cart-total">
+          <strong>Total: $<span id="cartTotal">0.00</span></strong>
+        </div>
+        <button class="checkout-btn" id="checkoutBtn">Checkout</button>
+      </div>
+    </div>
+
+    <!-- Product Modal -->
+    <div id="productModal" class="modal">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <div class="modal-body" id="modalBody">
+          <!-- Product details will be inserted here -->
+        </div>
+      </div>
+    </div>
+
+    <script  src="E-comm.js"></script>
+  </body>
+</html>
